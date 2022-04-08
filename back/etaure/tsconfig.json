@@ -1,0 +1,85 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "allowJs": true,
+    "outDir": "./dist",
+    "rootDirs": [
+      "./"
+    ],
+    "removeComments": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types"
+    ],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
+    "paths": {
+      "@types": [
+        "./src/shared/config/Types"
+      ],
+      "@container": [
+        "./src/shared/config/Container"
+      ],
+      "@config/*": [
+        "./src/shared/config/*"
+      ],
+      "@provider/*": [
+        "./src/shared/provider/*"
+      ],
+      "@util/*": [
+        "./src/shared/util/*"
+      ],
+      "@transformers/*": [
+        "./src/shared/transformers/*"
+      ],
+      "@validators/*": [
+        "./src/shared/validators/*"
+      ],
+      "@database/*": [
+        "./src/shared/database/*"
+      ],
+      "@models/*": [
+        "./src/main/models/*"
+      ],
+      "@dto/*": [
+        "./src/main/dto/*"
+      ],
+      "@errors/*": [
+        "./src/shared/errors/*"
+      ],
+      "@repositories/*": [
+        "./src/main/repositories/*"
+      ],
+      "@useCases/*": [
+        "./src/main/useCases/*"
+      ],
+      "@pages/*": [
+        "./src/main/pages/*"
+      ],
+      "@controllers/*": [
+        "./src/main/controllers/*"
+      ],
+      "@app": [
+        "./src/shared/http/app"
+      ],
+      "@httputil/*": [
+        "./src/shared/http/util/*"
+      ],
+      "@middleware/*": [
+        "./src/shared/http/middleware/*"
+      ],
+      "@server": [
+        "./src/server"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+  database:
+    build:
+      context: ./banco
+    ports:
+      - "5432:5432"
+    networks:
+      - etaure
+    env_file:
+      - ./banco/database.env
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+  etaure:
+    build:
+      context: ./back/etaure
+      dockerfile: Dockerfile
+    ports:
+      - "2999:3000"
+      - "5555:5858"
+    networks:
+      - etaure
+    depends_on:
+      - database
+    env_file: ./back/etaure/env/.env
+    volumes:
+      - ./back/etaure:/home/node
+      - etaure-volume:/home/node/node_modules
+    command: ./wait-for.sh database:5432 -- npm run dev
+
+volumes:
+  dbdata:
+  etaure-volume:
+
+networks:
+  etaure:
+    driver: bridge
